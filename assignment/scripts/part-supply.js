@@ -84,10 +84,32 @@ console.log('Total parts:', sum);
 console.log('9. Filling boxes with a "while" loop');
 let boxes = 0;
 let boxedParts = 0;
-let unboxedParts = 572
-while(boxedParts < unboxedParts) {
-    boxedParts = boxedParts + 7;
-    boxes = boxes + 1;
-}
-console.log('Full boxes:', boxes); // Should be 81 boxes. --> Giving me 82 because of remainder of parts.
-console.log('Boxed parts:', boxedParts); // 567 boxed parts, 5 remaining. --> Giving 574 due to the last loop.
+let unboxedParts = 572;
+let leftoverParts = 0; //Possible remainder idea.
+// while(boxedParts < unboxedParts) {
+//     boxedParts = boxedParts + 7;
+//     boxes = boxes + 1;
+// }
+// console.log('Full boxes:', boxes); // Should be 81 boxes. --> Giving me 82 because of remainder of parts.
+// console.log('Boxed parts:', boxedParts); // 567 boxed parts, 5 remaining. --> Giving 574 due to the last loop.
+
+
+//-------Attempt 2--------
+// while(boxedParts < unboxedParts) {
+//     // boxes = boxes + 1 still gives 82.
+//     // leftoverParts = unboxedParts - (boxedParts * boxes); to find remainder
+// }
+
+
+//-------Attempt 3--------
+// Should I create if statement to stop loop when boxed parts === unboxed parts?
+// while(boxedParts < unboxedParts){
+//     if(unboxedParts%7 === 0){ // If we ger a remainder of 0, add a count to boxes.
+//         boxedParts = boxedParts + 7; // Prevent infinite loop. STILL GETTING INFINITE LOOP!!!
+//         boxes = boxes + 1;
+//     }else { // Once we have a remainder, assign it to leftoverParts
+//         leftoverParts = unboxedParts;
+//     }
+// }
+// console.log('Full boxes:', boxes) // Expecting 81.
+// console.log('Leftover Parts:', leftoverParts); // Expecting 5.
