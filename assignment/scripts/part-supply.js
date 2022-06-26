@@ -43,7 +43,7 @@ for(i=0; i<supplyChanges.length; i++) {
     if(x > 0){
         console.log(`Added ${x} parts.`);
     }else if(x === 0){
-        console.log('No Change.');
+        console.log('No change.');
     }else {
         console.log(`Removed ${x} parts.`)
     }
@@ -54,10 +54,26 @@ for(i=0; i<supplyChanges.length; i++) {
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop. 
 console.log('7. Showing supplyChanges with "for of" loop');
+for(part of supplyChanges) {
+    console.log(part);
+    let x = part;
+    if(x > 0){
+        console.log(`Added ${x} parts.`);
+    }else if(x === 0){
+        console.log('No change.');
+    }else{
+        console.log(`Removed ${x} parts.`);
+    }
+}
 
 // 8. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('8. Total supplies available is:');
+let sum = 0;
+for( i=0; i<supplyChanges.length; i++) {
+    sum += supplyChanges[i];
+}
+console.log('Total parts:', sum);
 
 // 9. We have a large stash of parts in our warehouse that we 
 //    need to box up and get ready for shipment. 
@@ -66,3 +82,12 @@ console.log('8. Total supplies available is:');
 //    no more boxes can be filled.
 //    Then log how many boxes were filled, and how many parts are left over.
 console.log('9. Filling boxes with a "while" loop');
+let boxes = 0;
+let boxedParts = 0;
+let unboxedParts = 572
+while(boxedParts < unboxedParts) {
+    boxedParts = boxedParts + 7;
+    boxes = boxes + 1;
+}
+console.log('Full boxes:', boxes); // Should be 81 boxes. --> Giving me 82 because of remainder of parts.
+console.log('Boxed parts:', boxedParts); // 567 boxed parts, 5 remaining. --> Giving 574 due to the last loop.
