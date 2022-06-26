@@ -15,13 +15,21 @@ console.log('Supply Changes:', supplyChanges);
 
 // 3. Console log the value of the second item in the 'supplyChanges' array
 console.log('3. Second supplyChange is:');
+console.log('Second item in Supply Changes:', supplyChanges[1]);
 
 // 4. The last item was added by mistake. Remove it from the 'supplyChanges' 
 //    array & console.log the value removed.
 console.log('4. Removed item:');
+let removedItem = supplyChanges.pop();
+console.log('Removed item:', removedItem);
+console.log('The Supply Changes array now:', supplyChanges); // 11 should be gone. but logged.
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Adding 25 to supplyChanges.');
+let addedItem = 25;
+supplyChanges.push(25);
+console.log('Added item:', addedItem);
+console.log('The Supply Changes array now:', supplyChanges);
 
 // 6. Write a `for` loop that shows each value in the 'supplyChanges' array
 //    Use a console.log formatted as follows, where x is the value from the array
